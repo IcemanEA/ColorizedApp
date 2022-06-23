@@ -52,6 +52,9 @@
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="lf2-St-NyV">
                                                 <rect key="frame" x="105" y="0.0" width="279" height="31"/>
+                                                <connections>
+                                                    <action selector="changeSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="MJN-6k-o19"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                     </stackView>
@@ -121,6 +124,15 @@
                             <constraint firstItem="8JR-WT-UD2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="rjH-2W-u2v"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="blueLabel" destination="gD1-ey-eaD" id="Ikd-jg-OF9"/>
+                        <outlet property="blueSlider" destination="TZV-6j-WUZ" id="aHp-3h-wTH"/>
+                        <outlet property="colorTextView" destination="ix1-Tc-HlJ" id="aml-XJ-avy"/>
+                        <outlet property="greenLabel" destination="6ch-V2-vkh" id="rU8-0V-qOv"/>
+                        <outlet property="greenSlider" destination="qij-V1-alI" id="0pB-1D-410"/>
+                        <outlet property="redLabel" destination="gYS-9P-V1r" id="iej-rv-T30"/>
+                        <outlet property="redSlider" destination="lf2-St-NyV" id="xuj-10-MWF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

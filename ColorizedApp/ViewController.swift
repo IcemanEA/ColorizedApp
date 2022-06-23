@@ -9,10 +9,24 @@ import UIKit
 
 class ViewController: UIViewController {
  
+    // MARK: IB Outlet
+    @IBOutlet var redLabel: UILabel!
+    @IBOutlet var greenLabel: UILabel!
+    @IBOutlet var blueLabel: UILabel!
+    
+    @IBOutlet var redSlider: UISlider!
+    @IBOutlet var greenSlider: UISlider!
+    @IBOutlet var blueSlider: UISlider!
+    
+    @IBOutlet var colorTextView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-
+    @IBAction func changeSlider(_ sender: UISlider) {
+        
+    }
+    
 }
 
