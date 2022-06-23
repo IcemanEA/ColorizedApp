@@ -22,10 +22,26 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+                
+        self.view.backgroundColor = .gray
+        redSlider.minimumTrackTintColor = .red
+        greenSlider.minimumTrackTintColor = .green
+        blueSlider.minimumTrackTintColor = .blue
+        
+        colorTextView.text = ""
     }
 
-    @IBAction func changeSlider(_ sender: UISlider) {
+    @IBAction func changeSlider() {
+        var color = colorTextView.backgroundColor
         
+        switch sender {
+        case redSlider:
+            print("red")
+        case greenSlider:
+            color.
+        default:
+            print("another")
+        }
     }
     
 }
