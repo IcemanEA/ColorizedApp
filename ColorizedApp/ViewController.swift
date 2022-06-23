@@ -27,7 +27,6 @@ class ViewController: UIViewController {
         greenSlider.minimumTrackTintColor = .green
         blueSlider.minimumTrackTintColor = .blue
         
-        colorTextView.text = ""
         changeSlider(redSlider)
     }
 
@@ -40,8 +39,7 @@ class ViewController: UIViewController {
         
         colorTextView.backgroundColor = color
         colorTextView.text = color.toHex()
-        
-        
+                
         switch sender {
         case redSlider:
             redLabel.text = String(format: "%.2f", sender.value)
@@ -52,29 +50,46 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func copyButtonTapped() {
+        guard let hexCode = colorTextView.text else { return }
+        
+        UIPasteboard.general.string = hexCode
+    }
+    
 }
 
-// MARK: - From UIColor to String
+// MARK: - From UIColor to Hex
 extension UIColor {
 
-    func toHex(alpha: Bool = false) -> String? {
+    func toHex(isAlpha: Bool = false) -> String? {
         guard let components = cgColor.components, components.count >= 3 else {
             return nil
         }
 
-        let r = Float(components[0])
-        let g = Float(components[1])
-        let b = Float(components[2])
-        var a = Float(1.0)
+        let red = Float(components[0])
+        let green = Float(components[1])
+        let blue = Float(components[2])
+        var alpha = Float(1.0)
 
         if components.count >= 4 {
-            a = Float(components[3])
+            alpha = Float(components[3])
         }
 
-        if alpha {
-            return String(format: "%02lx%02lx%02lx%02lx", lroundf(r * 255), lroundf(g * 255), lroundf(b * 255), lroundf(a * 255))
+        if isAlpha {
+            return String(
+                format: "%02lx%02lx%02lx%02lx",
+                lroundf(red * 255),
+                lroundf(green * 255),
+                lroundf(blue * 255),
+                lroundf(alpha * 255)
+            )
         } else {
-            return String(format: "%02lx%02lx%02lx", lroundf(r * 255), lroundf(g * 255), lroundf(b * 255))
+            return String(
+                format: "%02lx%02lx%02lx",
+                lroundf(red * 255),
+                lroundf(green * 255),
+                lroundf(blue * 255)
+            )
         }
     }
 }

@@ -118,11 +118,25 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acA-g7-Vew">
+                                <rect key="frame" x="107" y="342" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="Dlu-sM-sUG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Copy to Clipboard"/>
+                                <connections>
+                                    <action selector="copyButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="W4I-tc-mES"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ix1-Tc-HlJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="32h-Vw-GF2"/>
+                            <constraint firstItem="acA-g7-Vew" firstAttribute="top" secondItem="8JR-WT-UD2" secondAttribute="bottom" constant="16" id="3c4-Qf-OVm"/>
+                            <constraint firstItem="acA-g7-Vew" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="A3u-Pf-Bue"/>
                             <constraint firstAttribute="trailing" secondItem="8JR-WT-UD2" secondAttribute="trailing" constant="16" id="a7G-uc-icH"/>
                             <constraint firstItem="8JR-WT-UD2" firstAttribute="top" secondItem="ix1-Tc-HlJ" secondAttribute="bottom" constant="16" id="cTI-pZ-ZLK"/>
                             <constraint firstItem="ix1-Tc-HlJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="g0s-Rk-flL"/>
