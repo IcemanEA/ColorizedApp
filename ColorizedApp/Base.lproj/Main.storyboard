@@ -53,7 +53,7 @@
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="lf2-St-NyV">
                                                 <rect key="frame" x="105" y="0.0" width="279" height="31"/>
                                                 <connections>
-                                                    <action selector="changeSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="MJN-6k-o19"/>
+                                                    <action selector="changeSlider" destination="BYZ-38-t0r" eventType="valueChanged" id="u7p-EN-Py3"/>
                                                 </connections>
                                             </slider>
                                         </subviews>
@@ -82,7 +82,7 @@
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="qij-V1-alI">
                                                 <rect key="frame" x="105" y="0.0" width="279" height="31"/>
                                                 <connections>
-                                                    <action selector="changeSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="Q9C-rd-kOx"/>
+                                                    <action selector="changeSlider" destination="BYZ-38-t0r" eventType="valueChanged" id="o8P-CW-jFF"/>
                                                 </connections>
                                             </slider>
                                         </subviews>
@@ -111,7 +111,7 @@
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="TZV-6j-WUZ">
                                                 <rect key="frame" x="105" y="0.0" width="279" height="31"/>
                                                 <connections>
-                                                    <action selector="changeSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="JxD-Jl-BKe"/>
+                                                    <action selector="changeSlider" destination="BYZ-38-t0r" eventType="valueChanged" id="xg8-rI-ELr"/>
                                                 </connections>
                                             </slider>
                                         </subviews>
