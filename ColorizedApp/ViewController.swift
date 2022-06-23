@@ -18,10 +18,12 @@ class ViewController: UIViewController {
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
     
-    @IBOutlet var colorTextView: UITextView!
+    @IBOutlet var colorLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        colorLabel.layer.cornerRadius = 15
                 
         redSlider.minimumTrackTintColor = .red
         greenSlider.minimumTrackTintColor = .green
@@ -37,8 +39,8 @@ class ViewController: UIViewController {
                             blue: CGFloat(blueSlider.value),
                             alpha: 1)
         
-        colorTextView.backgroundColor = color
-        colorTextView.text = color.toHex()
+        colorLabel.backgroundColor = color
+        colorLabel.text = color.toHex()
                 
         switch sender {
         case redSlider:
@@ -51,7 +53,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func copyButtonTapped() {
-        guard let hexCode = colorTextView.text else { return }
+        guard let hexCode = colorLabel.text else { return }
         
         UIPasteboard.general.string = hexCode
     }

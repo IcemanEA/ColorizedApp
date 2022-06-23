@@ -16,16 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="#124fsd" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ix1-Tc-HlJ">
-                                <rect key="frame" x="16" y="60" width="382" height="128"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="tTR-sN-ttv"/>
-                                </constraints>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="8JR-WT-UD2">
                                 <rect key="frame" x="16" y="204" width="382" height="122"/>
                                 <subviews>
@@ -130,24 +120,34 @@
                                     <action selector="copyButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="W4I-tc-mES"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jyI-JJ-zVA">
+                                <rect key="frame" x="16" y="60" width="382" height="128"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="DEP-9j-foB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ix1-Tc-HlJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="32h-Vw-GF2"/>
                             <constraint firstItem="acA-g7-Vew" firstAttribute="top" secondItem="8JR-WT-UD2" secondAttribute="bottom" constant="16" id="3c4-Qf-OVm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jyI-JJ-zVA" secondAttribute="trailing" constant="16" id="90C-ZG-Kd4"/>
                             <constraint firstItem="acA-g7-Vew" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="A3u-Pf-Bue"/>
+                            <constraint firstItem="jyI-JJ-zVA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="CK9-yz-0AF"/>
+                            <constraint firstItem="8JR-WT-UD2" firstAttribute="top" secondItem="jyI-JJ-zVA" secondAttribute="bottom" constant="16" id="O1h-BD-ZSt"/>
+                            <constraint firstItem="jyI-JJ-zVA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="R6b-H3-6yH"/>
                             <constraint firstAttribute="trailing" secondItem="8JR-WT-UD2" secondAttribute="trailing" constant="16" id="a7G-uc-icH"/>
-                            <constraint firstItem="8JR-WT-UD2" firstAttribute="top" secondItem="ix1-Tc-HlJ" secondAttribute="bottom" constant="16" id="cTI-pZ-ZLK"/>
-                            <constraint firstItem="ix1-Tc-HlJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="g0s-Rk-flL"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ix1-Tc-HlJ" secondAttribute="trailing" constant="16" id="kHm-Gi-8py"/>
                             <constraint firstItem="8JR-WT-UD2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="rjH-2W-u2v"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="blueLabel" destination="chF-5d-yqD" id="5nN-Hg-pCc"/>
                         <outlet property="blueSlider" destination="TZV-6j-WUZ" id="aHp-3h-wTH"/>
-                        <outlet property="colorTextView" destination="ix1-Tc-HlJ" id="aml-XJ-avy"/>
+                        <outlet property="colorLabel" destination="jyI-JJ-zVA" id="nIL-z9-Vxi"/>
                         <outlet property="greenLabel" destination="6ch-V2-vkh" id="rU8-0V-qOv"/>
                         <outlet property="greenSlider" destination="qij-V1-alI" id="0pB-1D-410"/>
                         <outlet property="redLabel" destination="gYS-9P-V1r" id="iej-rv-T30"/>
@@ -160,11 +160,11 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
