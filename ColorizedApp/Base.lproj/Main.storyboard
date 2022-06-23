@@ -53,7 +53,7 @@
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="lf2-St-NyV">
                                                 <rect key="frame" x="105" y="0.0" width="279" height="31"/>
                                                 <connections>
-                                                    <action selector="changeSlider" destination="BYZ-38-t0r" eventType="valueChanged" id="u7p-EN-Py3"/>
+                                                    <action selector="changeSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="dc0-pI-eO0"/>
                                                 </connections>
                                             </slider>
                                         </subviews>
@@ -82,7 +82,7 @@
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="qij-V1-alI">
                                                 <rect key="frame" x="105" y="0.0" width="279" height="31"/>
                                                 <connections>
-                                                    <action selector="changeSlider" destination="BYZ-38-t0r" eventType="valueChanged" id="o8P-CW-jFF"/>
+                                                    <action selector="changeSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="zJw-Oy-648"/>
                                                 </connections>
                                             </slider>
                                         </subviews>
@@ -111,7 +111,7 @@
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="TZV-6j-WUZ">
                                                 <rect key="frame" x="105" y="0.0" width="279" height="31"/>
                                                 <connections>
-                                                    <action selector="changeSlider" destination="BYZ-38-t0r" eventType="valueChanged" id="xg8-rI-ELr"/>
+                                                    <action selector="changeSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="NBo-J8-Dzg"/>
                                                 </connections>
                                             </slider>
                                         </subviews>
@@ -131,7 +131,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="blueLabel" destination="gD1-ey-eaD" id="Ikd-jg-OF9"/>
+                        <outlet property="blueLabel" destination="chF-5d-yqD" id="5nN-Hg-pCc"/>
                         <outlet property="blueSlider" destination="TZV-6j-WUZ" id="aHp-3h-wTH"/>
                         <outlet property="colorTextView" destination="ix1-Tc-HlJ" id="aml-XJ-avy"/>
                         <outlet property="greenLabel" destination="6ch-V2-vkh" id="rU8-0V-qOv"/>

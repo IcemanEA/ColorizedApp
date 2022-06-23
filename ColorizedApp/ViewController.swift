@@ -31,16 +31,21 @@ class ViewController: UIViewController {
         colorTextView.text = ""
     }
 
-    @IBAction func changeSlider() {
-        var color = colorTextView.backgroundColor
+    @IBAction func changeSlider(_ sender: UISlider) {
+        let color = UIColor(red: CGFloat(redSlider.value),
+                            green: CGFloat(greenSlider.value),
+                            blue: CGFloat(blueSlider.value),
+                            alpha: 1)
+        
+        colorTextView.backgroundColor = color
         
         switch sender {
         case redSlider:
-            print("red")
+            redLabel.text = String(format: "%.2f", sender.value)
         case greenSlider:
-            color.
+            greenLabel.text = String(format: "%.2f", sender.value)
         default:
-            print("another")
+            blueLabel.text = String(format: "%.2f", sender.value)
         }
     }
     
