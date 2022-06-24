@@ -24,6 +24,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
                 
         colorView.backgroundColor = .gray
+        colorView.layer.cornerRadius = 10
+        
         redSlider.minimumTrackTintColor = .red
         greenSlider.minimumTrackTintColor = .green
         blueSlider.minimumTrackTintColor = .blue
