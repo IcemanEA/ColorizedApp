@@ -18,17 +18,15 @@ class ViewController: UIViewController {
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
     
-    @IBOutlet var colorTextView: UITextView!
+    @IBOutlet var colorView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-        self.view.backgroundColor = .gray
+        colorView.backgroundColor = .gray
         redSlider.minimumTrackTintColor = .red
         greenSlider.minimumTrackTintColor = .green
         blueSlider.minimumTrackTintColor = .blue
-        
-        colorTextView.text = ""
     }
 
     @IBAction func changeSlider(_ sender: UISlider) {
@@ -37,7 +35,7 @@ class ViewController: UIViewController {
                             blue: CGFloat(blueSlider.value),
                             alpha: 1)
         
-        colorTextView.backgroundColor = color
+        colorView.backgroundColor = color
         
         switch sender {
         case redSlider:
@@ -48,6 +46,4 @@ class ViewController: UIViewController {
             blueLabel.text = String(format: "%.2f", sender.value)
         }
     }
-    
 }
-
