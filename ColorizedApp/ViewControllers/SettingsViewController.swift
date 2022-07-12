@@ -41,6 +41,8 @@ class SettingsViewController: UIViewController {
         redSlider.minimumTrackTintColor = .red
         greenSlider.minimumTrackTintColor = .green
         blueSlider.minimumTrackTintColor = .blue
+        
+        addToolBar(for: redTextField, greenTextField, blueTextField)
             
         setSliders()
         setColor()
@@ -126,6 +128,24 @@ class SettingsViewController: UIViewController {
     
     private func string(from value: Float) -> String {
         String(format: "%.2f", value)
+    }
+    
+    // MARK: - addToolBar
+    private func addToolBar(for fields: UITextField...) {
+        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 50))
+        
+        let freeSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneToolBarPressed))
+        toolBar.items = [freeSpace, doneButton]
+        toolBar.sizeToFit()
+        
+        fields.forEach { field in
+            field.inputAccessoryView = toolBar
+        }
+    }
+    
+    @objc private func doneToolBarPressed() {
+        view.endEditing(true)
     }
 }
 
