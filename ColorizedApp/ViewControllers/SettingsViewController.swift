@@ -36,18 +36,7 @@ class SettingsViewController: UIViewController {
         greenTextField.delegate = self
         blueTextField.delegate = self
         
-        colorView.layer.cornerRadius = 10
-        
-        redSlider.minimumTrackTintColor = .red
-        greenSlider.minimumTrackTintColor = .green
-        blueSlider.minimumTrackTintColor = .blue
-        
-        addToolBar(for: redTextField, greenTextField, blueTextField)
-            
-        setSliders()
-        setColor()
-        setValue(for: redLabel, greenLabel, blueLabel,
-                 and: redTextField, greenTextField, blueTextField)
+        setupUI()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -75,6 +64,21 @@ class SettingsViewController: UIViewController {
     }
 
     // MARK: - Set UI
+    private func setupUI() {
+        colorView.layer.cornerRadius = 10
+        
+        redSlider.minimumTrackTintColor = .red
+        greenSlider.minimumTrackTintColor = .green
+        blueSlider.minimumTrackTintColor = .blue
+        
+        addToolBar(for: redTextField, greenTextField, blueTextField)
+            
+        setSliders()
+        setColor()
+        setValue(for: redLabel, greenLabel, blueLabel,
+                 and: redTextField, greenTextField, blueTextField)
+    }
+    
     private func setSliders() {
         if let rgb = mainColor.cgColor.components {
             for (index, value) in rgb.enumerated() {
@@ -130,7 +134,7 @@ class SettingsViewController: UIViewController {
         String(format: "%.2f", value)
     }
     
-    // MARK: - addToolBar
+    // MARK: - ToolBar
     private func addToolBar(for fields: UITextField...) {
         let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 50))
         
