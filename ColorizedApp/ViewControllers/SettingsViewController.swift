@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SettingsViewController.swift
 //  ColorizedApp
 //
 //  Created by Egor Ledkov on 23.06.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SettingsViewController: UIViewController {
  
     // MARK: IB Outlet
     @IBOutlet var redLabel: UILabel!
@@ -20,6 +20,8 @@ class ViewController: UIViewController {
     
     @IBOutlet var colorView: UIView!
     
+    var mainColor: UIColor!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,8 +31,11 @@ class ViewController: UIViewController {
         greenSlider.minimumTrackTintColor = .green
         blueSlider.minimumTrackTintColor = .blue
         
+        redSlider.value = Float(mainColor.ciColor.red)
+        greenSlider.value = Float(mainColor.ciColor.green)
+        blueSlider.value = Float(mainColor.ciColor.blue)
+                
         setColor()
-        setValue(for: redLabel, greenLabel, blueLabel)
     }
 
     @IBAction func changeSlider(_ sender: UISlider) {
