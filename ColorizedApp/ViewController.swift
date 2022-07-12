@@ -22,30 +22,53 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        colorView.backgroundColor = .gray
+        
         colorView.layer.cornerRadius = 10
         
         redSlider.minimumTrackTintColor = .red
         greenSlider.minimumTrackTintColor = .green
         blueSlider.minimumTrackTintColor = .blue
+        
+        setColor()
+        setValue(for: redLabel, greenLabel, blueLabel)
     }
 
     @IBAction func changeSlider(_ sender: UISlider) {
-        let color = UIColor(red: CGFloat(redSlider.value),
-                            green: CGFloat(greenSlider.value),
-                            blue: CGFloat(blueSlider.value),
-                            alpha: 1)
-        
-        colorView.backgroundColor = color
+        setColor()
         
         switch sender {
         case redSlider:
-            redLabel.text = String(format: "%.2f", sender.value)
+            setValue(for: redLabel)
         case greenSlider:
-            greenLabel.text = String(format: "%.2f", sender.value)
+            setValue(for: greenLabel)
         default:
-            blueLabel.text = String(format: "%.2f", sender.value)
+            setValue(for: blueLabel)
         }
+    }
+    
+    private func setColor() {
+        colorView.backgroundColor = UIColor(
+            red: CGFloat(redSlider.value),
+            green: CGFloat(greenSlider.value),
+            blue: CGFloat(blueSlider.value),
+            alpha: 1
+        )
+    }
+    
+    private func setValue(for labels: UILabel...) {
+        labels.forEach { label in
+            switch label {
+            case redLabel:
+                redLabel.text = string(from: redSlider.value)
+            case greenLabel:
+                greenLabel.text = string(from: greenSlider.value)
+            default:
+                blueLabel.text = string(from: blueSlider.value)
+            }
+        }
+    }
+    
+    private func string(from value: Float) -> String {
+        String(format: "%.2f", value)
     }
 }
