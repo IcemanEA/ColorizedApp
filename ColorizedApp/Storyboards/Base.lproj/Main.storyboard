@@ -155,6 +155,9 @@
                                 <state key="normal" title="Done">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="donePressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="zO2-4d-zwa"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -173,11 +176,14 @@
                     <connections>
                         <outlet property="blueLabel" destination="chF-5d-yqD" id="5nN-Hg-pCc"/>
                         <outlet property="blueSlider" destination="TZV-6j-WUZ" id="aHp-3h-wTH"/>
+                        <outlet property="blueTextField" destination="HKD-26-2gA" id="TGx-ie-5Fx"/>
                         <outlet property="colorView" destination="Qxy-PX-bCJ" id="9pv-dg-VBc"/>
                         <outlet property="greenLabel" destination="6ch-V2-vkh" id="rU8-0V-qOv"/>
                         <outlet property="greenSlider" destination="qij-V1-alI" id="0pB-1D-410"/>
+                        <outlet property="greenTextField" destination="YDy-vf-d6V" id="ib0-N4-l3s"/>
                         <outlet property="redLabel" destination="gYS-9P-V1r" id="iej-rv-T30"/>
                         <outlet property="redSlider" destination="lf2-St-NyV" id="xuj-10-MWF"/>
+                        <outlet property="redTextField" destination="doh-Tw-hAu" id="OYP-NC-dm3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
