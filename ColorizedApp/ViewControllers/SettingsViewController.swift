@@ -40,6 +40,7 @@ class SettingsViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
 
@@ -58,7 +59,6 @@ class SettingsViewController: UIViewController {
     }
 
     @IBAction func donePressed() {
-        view.endEditing(true)
         delegate.setViewBackground(color: mainColor)
         dismiss(animated: true)
     }
@@ -136,10 +136,14 @@ class SettingsViewController: UIViewController {
     
     // MARK: - ToolBar
     private func addToolBar(for fields: UITextField...) {
-        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 50))
+        let toolBar = UIToolbar()
         
-        let freeSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneToolBarPressed))
+        let freeSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
+                                        target: nil,
+                                        action: nil)
+        let doneButton = UIBarButtonItem(title: "Done", style: .done,
+                                         target: self,
+                                         action: #selector(doneToolBarPressed))
         toolBar.items = [freeSpace, doneButton]
         toolBar.sizeToFit()
         
@@ -156,7 +160,17 @@ class SettingsViewController: UIViewController {
 // MARK: - UITextFieldDelegate
 extension SettingsViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        guard let value = Float(textField.text ?? "0.0"), value <= 1, value >= 0 else { return }
+        guard let value = Float(textField.text ?? "0.0"), value <= 1, value >= 0 else {
+            let alertVC = UIAlertController(
+                title: "Attention",
+                message: "Specify a color in the range from 0 to 1",
+                preferredStyle: .alert
+            )
+            alertVC.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alertVC, animated: true)
+            
+            return
+        }
         
         switch textField {
         case redTextField:
